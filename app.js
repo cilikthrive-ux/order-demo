@@ -130,7 +130,7 @@
         { id: uid(), name: "Gift box", qty: 6, unit: "pcs", min: 4 },
       ],
       expenses: [
-        { id: uid(), date: d(-26), desc: "Pipe cleaner & LED (Shopee)", category: "Materials", amount: 210 },
+        { id: uid(), date: d(-3), desc: "Pipe cleaner & LED (Shopee)", category: "Materials", amount: 210 },
         { id: uid(), date: d(-14), desc: "Box & ribbon", category: "Packaging", amount: 85 },
         { id: uid(), date: d(-6), desc: "J&T postage", category: "Postage", amount: 60 },
         { id: uid(), date: d(-2), desc: "Glue gun refill", category: "Equipment", amount: 25 },
@@ -1426,7 +1426,8 @@
     if (!before) return `<span class="chg up">new</span>`;
     const pct = Math.round(((now - before) / Math.abs(before)) * 100);
     const good = lowerIsBetter ? pct < 0 : pct > 0, bad = lowerIsBetter ? pct > 0 : pct < 0;
-    return `<span class="chg ${good ? "up" : bad ? "down" : "flat"}">${pct > 0 ? "▲" : pct < 0 ? "▼" : "•"} ${Math.abs(pct)}%</span>`;
+    const size = Math.abs(pct) >= 1000 ? `${Math.round(Math.abs(now / before))}×` : `${Math.abs(pct)}%`;
+    return `<span class="chg ${good ? "up" : bad ? "down" : "flat"}">${pct > 0 ? "▲" : pct < 0 ? "▼" : "•"} ${size}</span>`;
   };
 
   function report() {
