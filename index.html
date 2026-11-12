@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8ea" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Kedai Bunga Demo – Order App</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <meta name="apple-mobile-web-app-title" content="Order Demo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div class="brand"><img class="logo" src="logo-mark.jpg" alt="" /><span id="brandName">Kedai Manis</span></div>
+  </header>
+
+  <div class="scrim" id="scrim"></div>
+  <nav class="drawer" id="drawer" aria-label="Main">
+    <div class="drawer-head">
+      <img class="drawer-logo" src="logo.jpg" alt="" />
+      <div class="brand big" style="justify-content:center"><span id="drawerBrand">Kedai Manis</span></div>
+      <div class="muted" id="drawerOwner"></div>
+    </div>
+    <a href="#dashboard" data-page="dashboard">🌸 Dashboard</a>
+    <a href="#orders" data-page="orders">💌 Orders</a>
+    <a href="#calendar" data-page="calendar">🗓️ Calendar</a>
+    <a href="#report" data-page="report">📊 Report</a>
+    <a href="#customers" data-page="customers">👥 Customers</a>
+    <a href="#products" data-page="products">🌷 Products</a>
+    <a href="#inventory" data-page="inventory">🧺 Supplies</a>
+    <a href="#expenses" data-page="expenses">👛 Expenses</a>
+    <a href="#shop" data-page="shop">🎀 Settings</a>
+  </nav>
+
+  <div class="demo-note" id="demoNote">✨ Demo: example data, saved only in your browser. Try anything!</div>
+  <main id="view"></main>
+
+  <div class="modal-wrap" id="modalWrap" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle"></h2>
+        <button class="close-btn" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>window.APP_DEMO = true;</script>
+  <script src="app.js"></script>
+</body>
+</html>
